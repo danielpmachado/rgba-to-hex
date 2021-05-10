@@ -34,8 +34,7 @@ class Home extends React.Component {
 
   convertToHex = (color) => {
     const first = Math.floor(color / 16);
-    const second = 16 * (color / 16 - first);
-    console.log('second', second);
+    const second = Math.floor(16 * (color / 16 - first));
     return this.hexTable(first) + this.hexTable(second);
   }
 
@@ -72,21 +71,17 @@ class Home extends React.Component {
         < body className="is-preload">
           < header id="header" >
             <h1>rgba to hex</h1>
-            <p>A simple webpage which converts rgba values into hexadecimal<br />
-				asdasd.</p>
+            <p>A simple webpage which converts rgba values into a hexadecimal <br />
+				    value</p>
           </header >
           <form id="signup-form" onSubmit={this.handleSubmit} >
             <input type="number" placeholder="red" name="red" min="0" max="255" onChange={this.handleChange} />
             <input type="number" placeholder="green" name="green" min="0" max="255" onChange={this.handleChange} />
             <input type="number" placeholder="blue" name="blue" min="0" max="255" onChange={this.handleChange} />
             <input type="number" placeholder="alfa" name="alfa" min="0" max="100" onChange={this.handleChange} />
-            {/* <input type="email" name="email" id="email" placeholder="Email Address" /> */}
             <input type="submit" value="Convert" />
           </form >
-          <p> hex value {result}</p>
-
-          {/*  Scripts  */}
-          {/* <script src="assets/js/main.js"></script> */}
+          <p> hex value <strong>{result}</strong> </p>
         </body >
       </html >
     )
